@@ -1,0 +1,27 @@
+{
+	"name": "withstartyear",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev:without": "vite --config vite.without.config.ts",
+		"build:without": "vite build --config vite.without.config.ts",
+		"dev:with": "vite --config vite.with.config.ts",
+		"build:with": "vite build --config vite.with.config.ts"
+	},
+	"dependencies": {
+		"@formkit/tempo": "^0.0.19",
+		"rollup-plugin-visualizer": "^5.12.0",
+		"vue": "^3.4.21"
+	},
+	"devDependencies": {
+		"@tsconfig/node20": "^20.1.2",
+		"@types/node": "^20.11.28",
+		"@vitejs/plugin-vue": "^5.0.4",
+		"@vue/tsconfig": "^0.5.1",
+		"npm-run-all2": "^6.1.2",
+		"typescript": "~5.4.0",
+		"vite": "^5.1.6",
+		"vue-tsc": "^2.0.6"
+	}
+}
