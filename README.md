@@ -1,4 +1,4 @@
-# Tempo not splitting example
+# Tempo not splitting test
 
 this repo is to show Tempo not being able to split when using Vite
 
