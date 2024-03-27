@@ -26,7 +26,7 @@ bundled into 1 index.js while Date-fns & Lodash-es use index.js to only export e
 Based on ^ is my theory it's maybe best for libraries to not bundle everything into 1 index.js file but to keep all code separated (like in development) to allow Vite & other bundlers to decide how to
 bundle a library in a more efficient way with the code of the developer.
 
-# more test coming
+# 1 more test coming
 
 I plan to temporary fork Tempo to create a version that isn't bundled to see if their will be a difference, this will happen in the weekend due to also needing to do other things
 
