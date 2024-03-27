@@ -11,7 +11,7 @@ I've included in this repo both apps prebuild
 
 1. Vite doesn't attempt to split Tempo to have functions only included where they're used (in the case of the 'with' build)
 2. Because of ^, if a function of Tempo gets included to the main compiled index.js it'll included other used functions from tempo
-3. But if Tempo gets used in multiple files/components that won't be in the main index.js file it'll be separated into it's own index.js file. (if only used 1 file, it'll be bundled into that file)
+3. But if Tempo gets used in multiple files/components that won't be in the main index.js file it'll be separated into it's own js file. (if only used 1 file, it'll be bundled into that file)
 
 # What I've observed from the main project that caused me testing this
 
