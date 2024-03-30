@@ -15,20 +15,31 @@ I've included in this repo both apps prebuild
 
 # What I've observed from the main project that caused me testing this
 
-in the main project where I noticed Tempo wasn't able to split was when I checked the Rollup visualizer that more libraries have the issue of not being split, 1 of them being Vueuse.
+in the main project where I noticed Tempo wasn't able to split was when I checked the Rollup visualizer that more packages have the issue of not being split, 1 of them being Vueuse.
 
-But at least the 2 libraries I saw were able to split were Date-fns & Lodash-es.
+But at least the 2 packages I saw were able to split were Date-fns & Lodash-es.
 
 When I compared [Tempo](https://www.npmjs.com/package/@formkit/tempo?activeTab=code) & [Vueuse](https://www.npmjs.com/package/@vueuse/core?activeTab=code) to
 [Date-fns](https://www.npmjs.com/package/date-fns?activeTab=code) & [lodash-es](https://www.npmjs.com/package/lodash-es?activeTab=code) at NPMjs.com I noticed that Tempo & Vueuse have everything
 bundled into 1 index.js while Date-fns & Lodash-es use index.js to only export everything but have most things still in separated files.
 
-Based on ^ is my theory it's maybe best for libraries to not bundle everything into 1 index.js file but to keep all code separated (like in development) to allow Vite & other bundlers to decide how to
-bundle a library in a more efficient way with the code of the developer.
+Based on ^ is my theory it's maybe best for packages to not bundle everything into 1 index.js file but to keep all code separated (like in development) to allow Vite & other bundlers to decide how to
+bundle a package in a more efficient way with the code of the developer.
 
-# 1 more test coming
+# Test with a fork that doesn't bundle Tempo
 
-I plan to temporary fork Tempo to create a version that isn't bundled to see if their will be a difference, this will happen in the weekend due to also needing to do other things
+After creating a [fork](https://github.com/WilcoSp/tempo-split) of Tempo, I've changed the build settings so it won't bundle everything into 1 index.mjs/index.cjs file but separate files with help of
+an esbuild plugin. Than I created versions of the `format` & `parse` components using the fork + adding `yearStart` from the fork to the with version.
+
+After building both versions my observations were confirmed. To allow for Tempo and other packages to be code splitable by Vite & other bundlers it's best to not bundle for npm or other js registries.
+If a package should also be available via cdn it's than better to build a separate bundle.js or cdn.js and at set `browser`, `unpkg` and/or `jsdelivr` (or under `exports` object) to the bundle.js or
+cdn.js file instead of index.js
+
+# Final words
+
+With these tests I'll update my [fork](https://github.com/WilcoSp/tempo-split) of Tempo so it'll be ready to be merged into Tempo and hopefully be included in a future release.
+
+With these tests I've and hopefully others that read this have learned a lot about how Vite & other bundlers handle pre/unbundled packages when bundling a js app.
 
 # build/dev commands
 
@@ -36,13 +47,13 @@ after installing all dependencies these build/dev are available
 
 (pnpm is used here, but npm/yarn should work too)
 
-## for without `startYear`
+## For without `startYear`
 
 dev: `pnpm run dev:without`
 
 build: `pnpm run build:without`
 
-## for with `startYear`
+## For with `startYear`
 
 dev: `pnpm run dev:with`
 

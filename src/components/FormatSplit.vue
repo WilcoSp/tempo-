@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import WelcomeItem from "./WelcomeItem.vue";
-import { format } from "@formkit/tempo";
+import { format } from "@wilcosp/formkit-tempo";
 
 const locales = ["en-US", "nl", "de", "es"];
 const current = ref(locales[0]);
@@ -12,7 +12,7 @@ const formatted = computed(() => format(today, { date: "long" }, current.value))
 
 <template>
 	<WelcomeItem>
-		<template #heading>Format original</template>
+		<template #heading>Format split</template>
 		<select name="locale" v-model="current" style="width: 5rem">
 			<option v-for="loc of locales" :value="loc" :key="loc">{{ loc }}</option>
 		</select>

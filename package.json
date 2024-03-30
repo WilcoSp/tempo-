@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"@formkit/tempo": "^0.0.19",
+		"@wilcosp/formkit-tempo": "github:wilcosp/tempo-split#019de98207be8c212eb15e91c415ef7f8d68481c",
 		"rollup-plugin-visualizer": "^5.12.0",
 		"vue": "^3.4.21"
 	},
