@@ -28,12 +28,15 @@ bundle a package in a more efficient way with the code of the developer.
 
 # Test with a fork that doesn't bundle Tempo
 
-After creating a [fork](https://github.com/WilcoSp/tempo-split) of Tempo, I've changed the build settings so it won't bundle everything into 1 index.mjs/index.cjs file but separate files with help of
-an esbuild plugin. Than I created versions of the `format` & `parse` components using the fork + adding `yearStart` from the fork to the with version.
+After creating a [fork](https://github.com/WilcoSp/tempo-split) of Tempo, I've changed the build settings so it won't bundle everything into 1 index.mjs file but separate files with help of an esbuild
+plugin. Than I created versions of the `format` & `parse` components using the fork + adding `yearStart` from the fork to the with version.
 
 After building both versions my observations were confirmed. To allow for Tempo and other packages to be code splitable by Vite & other bundlers it's best to not bundle for npm or other js registries.
 If a package should also be available via cdn it's than better to build a separate bundle.js or cdn.js and at set `browser`, `unpkg` and/or `jsdelivr` (or under `exports` object) to the bundle.js or
 cdn.js file instead of index.js
+
+edit: Because commonjs isn't at least by Vite isn't used and probably Node.js & other backend runtimes import everything is it still an option to bundle commonjs, depending on the transpiler the
+commonjs code could become bigger even.
 
 # Final words
 
