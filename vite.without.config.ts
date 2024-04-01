@@ -24,7 +24,7 @@ export default defineConfig({
 	plugins: [
 		vue(),
 		visualizer({
-			filename: `${outDir}/visualizer.html`,
+			filename: `visualizer/without.html`,
 			brotliSize: true,
 			gzipSize: true,
 		}),
