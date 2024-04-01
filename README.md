@@ -44,6 +44,11 @@ With these tests I'll update my [fork](https://github.com/WilcoSp/tempo-split) o
 
 With these tests I've and hopefully others that read this have learned a lot about how Vite & other bundlers handle pre/unbundled packages when bundling a js app.
 
+# links to visualizer
+
+-   [with version](https://wilcosp.github.io/tempo-split-test/visualizer/with.html)
+-   [without](https://wilcosp.github.io/tempo-split-test/visualizer/without.html)
+
 # build/dev commands
 
 after installing all dependencies these build/dev are available
