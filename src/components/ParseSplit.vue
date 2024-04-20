@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import WelcomeItem from "./WelcomeItem.vue";
-import { parse } from "@wilcosp/formkit-tempo";
+import { parse } from "tempo-old";
 
 const options = ["1996-02-27", "2022-01-28", "2006/09/28", "2013.10.12"];
 const current = ref(options[0]);

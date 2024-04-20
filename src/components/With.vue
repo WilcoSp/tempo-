@@ -2,7 +2,7 @@
 import WelcomeItem from "./WelcomeItem.vue";
 import { defineAsyncComponent } from "vue";
 import { yearStart as yearStartOG } from "@formkit/tempo";
-import { yearStart as yearStartSplit } from "@wilcosp/formkit-tempo";
+import { yearStart as yearStartSplit } from "tempo-old";
 const FormatComp = defineAsyncComponent(() => import("./FormatComp.vue"));
 const FormatSplit = defineAsyncComponent(() => import("./FormatSplit.vue"));
 const ParseComp = defineAsyncComponent(() => import("./ParseComp.vue"));

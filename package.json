@@ -10,19 +10,19 @@
 		"build:with": "vite build --config vite.with.config.ts"
 	},
 	"dependencies": {
-		"@formkit/tempo": "^0.0.19",
-		"@wilcosp/formkit-tempo": "github:wilcosp/tempo-split#019de98207be8c212eb15e91c415ef7f8d68481c",
+		"@formkit/tempo": "^0.1.1",
 		"rollup-plugin-visualizer": "^5.12.0",
-		"vue": "^3.4.21"
+		"tempo-old": "npm:@formkit/tempo@0.0.19",
+		"vue": "^3.4.23"
 	},
 	"devDependencies": {
 		"@tsconfig/node20": "^20.1.2",
-		"@types/node": "^20.11.28",
+		"@types/node": "^20.12.7",
 		"@vitejs/plugin-vue": "^5.0.4",
 		"@vue/tsconfig": "^0.5.1",
 		"npm-run-all2": "^6.1.2",
-		"typescript": "~5.4.0",
-		"vite": "^5.1.6",
-		"vue-tsc": "^2.0.6"
+		"typescript": "~5.4.5",
+		"vite": "^5.2.10",
+		"vue-tsc": "^2.0.13"
 	}
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import WelcomeItem from "./WelcomeItem.vue";
-import { format } from "@wilcosp/formkit-tempo";
+import { format } from "tempo-old";
 
 const locales = ["en-US", "nl", "de", "es"];
 const current = ref(locales[0]);
